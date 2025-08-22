@@ -281,7 +281,63 @@ if (N &gt; 0) {
  </pre>
         <button onclick="copyCode(this)">Copy</button>
     </div>
+ <div>
+<div class="code-section">
+        <h2>2</h2>
+        <pre>
+          
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Basic Animation of Ball</title>
+    <style>
+        #layer1 {
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
 
+        #layer2 {
+            position: absolute;
+            top: 50px;
+            left: 150px;
+        }
+
+        #layer3 {
+            position: absolute;
+            top: 50px;
+            left: 250px;
+        }
+    </style>
+
+    <script type="text/javascript">
+        function moveUp(layer) {
+            var top = window.prompt("Enter the top value:");
+            var left = window.prompt("Enter the left value:");
+
+            document.getElementById(layer).style.top = top + "px";
+            document.getElementById(layer).style.left = left + "px";
+        }
+    </script>
+</head>
+
+<body>
+    <div id="layer1">
+        <img src="ball1.gif" onclick="moveUp('layer1')" alt="ball1">
+    </div>
+
+    <div id="layer2">
+        <img src="ball2.gif" onclick="moveUp('layer2')" alt="ball2">
+    </div>
+
+    <div id="layer3">
+        <img src="ball3.gif" onclick="moveUp('layer3')" alt="ball3">
+    </div>
+</body>
+</html>
+ </pre>
+        <button onclick="copyCode(this)">Copy</button>
+    </div>
 <script>
     function copyCode(button) {
         const codeBlock = button.previousElementSibling.innerText;
