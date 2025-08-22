@@ -285,12 +285,11 @@ if (N &gt; 0) {
 <div class="code-section">
         <h2>2</h2>
         <pre>
-          
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Basic Animation of Ball</title>
-    <style>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Basic Animation of Ball&lt;/title&gt;
+    &lt;style&gt;
         #layer1 {
             position: absolute;
             top: 50px;
@@ -308,9 +307,9 @@ if (N &gt; 0) {
             top: 50px;
             left: 250px;
         }
-    </style>
+    &lt;/style&gt;
 
-    <script type="text/javascript">
+    &lt;script type="text/javascript"&gt;
         function moveUp(layer) {
             var top = window.prompt("Enter the top value:");
             var left = window.prompt("Enter the left value:");
@@ -318,23 +317,23 @@ if (N &gt; 0) {
             document.getElementById(layer).style.top = top + "px";
             document.getElementById(layer).style.left = left + "px";
         }
-    </script>
-</head>
+    &lt;/script&gt;
+&lt;/head&gt;
 
-<body>
-    <div id="layer1">
-        <img src="ball1.gif" onclick="moveUp('layer1')" alt="ball1">
-    </div>
+&lt;body&gt;
+    &lt;div id="layer1"&gt;
+        &lt;img src="ball1.gif" onclick="moveUp('layer1')" alt="ball1"&gt;
+    &lt;/div&gt;
 
-    <div id="layer2">
-        <img src="ball2.gif" onclick="moveUp('layer2')" alt="ball2">
-    </div>
+    &lt;div id="layer2"&gt;
+        &lt;img src="ball2.gif" onclick="moveUp('layer2')" alt="ball2"&gt;
+    &lt;/div&gt;
 
-    <div id="layer3">
-        <img src="ball3.gif" onclick="moveUp('layer3')" alt="ball3">
-    </div>
-</body>
-</html>
+    &lt;div id="layer3"&gt;
+        &lt;img src="ball3.gif" onclick="moveUp('layer3')" alt="ball3"&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
  </pre>
         <button onclick="copyCode(this)">Copy</button>
     </div>
