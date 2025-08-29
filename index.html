@@ -452,6 +452,103 @@ if (N &gt; 0) {
  </pre>
         <button onclick="copyCode(this)">Copy</button>
     </div>
+    <div>
+<div class="code-section">
+        <h2>6</h2>
+        <pre>
+          &lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Employee Info&lt;/title&gt;
+    &lt;style&gt;
+        .container {
+            width: 400px;
+            padding: 20px;
+            border: 2px solid #828282;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+        input {
+            width: 100px;
+            margin: 5px 0;
+            padding: 6px;
+        }
+        button {
+            padding: 8px 15px;
+            font-size: 14px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 15px;
+            background: #eef;
+            padding: 10px;
+            border-radius: 8px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="container"&gt;
+        &lt;h2&gt;Employee Info&lt;/h2&gt;
+
+        &lt;label&gt;Employee Name:&lt;/label&gt;
+        &lt;input type="text" id="ename"&gt;
+
+        &lt;label&gt;Emp ID:&lt;/label&gt;
+        &lt;input type="text" id="eid"&gt;
+
+        &lt;label&gt;Basic Pay:&lt;/label&gt;
+        &lt;input type="number" id="basic"&gt;
+
+        &lt;button onclick="calculate()"&gt;Calculate Salary&lt;/button&gt;
+
+        &lt;div class="result" id="output"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;script&gt;
+        function calculate() {
+            let name = document.getElementById("ename").value;
+            let eid = document.getElementById("eid").value;
+            let basic = parseFloat(document.getElementById("basic").value);
+
+            if (isNaN(basic) || basic &lt;= 0) {
+                alert("Please enter a valid Basic Pay!");
+                return;
+            }
+
+            // Salary components
+            let DA = 0.40 * basic;
+            let HRA = 0.20 * basic;
+            let PF = 0.12 * basic;
+            let grosspay = basic + DA + HRA;
+            let tax = 0.10 * grosspay;
+            let deduction = PF + tax;
+            let netpay = grosspay - deduction;
+
+            // Display results
+            document.getElementById("output").innerHTML =
+                "&lt;b&gt;Emp Name:&lt;/b&gt; " + name + "&lt;br&gt;" +
+                "&lt;b&gt;Emp ID:&lt;/b&gt; " + eid + "&lt;br&gt;" +
+                "&lt;b&gt;Basic Pay:&lt;/b&gt; " + basic.toFixed(2) + "&lt;br&gt;" +
+                "&lt;b&gt;DA:&lt;/b&gt; " + DA.toFixed(2) + "&lt;br&gt;" +
+                "&lt;b&gt;HRA:&lt;/b&gt; " + HRA.toFixed(2) + "&lt;br&gt;" +
+                "&lt;b&gt;PF:&lt;/b&gt; " + PF.toFixed(2) + "&lt;br&gt;" +
+                "&lt;b&gt;Gross Pay:&lt;/b&gt; " + grosspay.toFixed(2) + "&lt;br&gt;" +
+                "&lt;b&gt;Tax:&lt;/b&gt; " + tax.toFixed(2) + "&lt;br&gt;" +
+                "&lt;b&gt;Total Deduction:&lt;/b&gt; " + deduction.toFixed(2) + "&lt;br&gt;" +
+                "&lt;b&gt;Net Pay:&lt;/b&gt; " + netpay.toFixed(2);
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+ </pre>
+        <button onclick="copyCode(this)">Copy</button>
+    </div>
 <script>
     function copyCode(button) {
         const codeBlock = button.previousElementSibling.innerText;
