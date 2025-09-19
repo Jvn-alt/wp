@@ -552,20 +552,39 @@ if (N &gt; 0) {
  <div class="code-section">
         <h2>1</h2>
         <pre>
-          &lt;?php
+       &lt;?php
+// Array of background colors for each day
 $backgroundColor = array(
-    "Monday"    =&gt; "lightblue",
-    "Tuesday"   =&gt; "lightgreen",
-    "Wednesday" =&gt; "lightyellow",
-    "Thursday"  =&gt; "lightpink",
+    "Sunday"    =&gt; "lightblue",
+    "Monday"    =&gt; "lightgreen",
+    "Tuesday"   =&gt; "lightyellow",
+    "Wednesday" =&gt; "lightpink",
+    "Thursday"  =&gt; "lightskyblue",
     "Friday"    =&gt; "lightgray",
-    "Saturday"  =&gt; "orange",
-    "Sunday"    =&gt; "violet"
+    "Saturday"  =&gt; "orange"
 );
 
-$dayOfWeek = date("l");
-$color = $backgroundColor[$dayOfWeek];
+// Get the current day
+$dayofweek = date("l");
+
+// Assign color based on the day
+if ($dayofweek == "Sunday") {
+    $color = $backgroundColor["Sunday"];
+} elseif ($dayofweek == "Monday") {
+    $color = $backgroundColor["Monday"];
+} elseif ($dayofweek == "Tuesday") {
+    $color = $backgroundColor["Tuesday"];
+} elseif ($dayofweek == "Wednesday") {
+    $color = $backgroundColor["Wednesday"];
+} elseif ($dayofweek == "Thursday") {
+    $color = $backgroundColor["Thursday"];
+} elseif ($dayofweek == "Friday") {
+    $color = $backgroundColor["Friday"];
+} else { // Saturday
+    $color = $backgroundColor["Saturday"];
+}
 ?&gt;
+
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -576,7 +595,7 @@ $color = $backgroundColor[$dayOfWeek];
     &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
-    &lt;h1&gt;Today is &lt;?php echo $dayOfWeek; ?&gt;&lt;/h1&gt;
+    &lt;h1&gt;Today is &lt;?php echo $dayofweek; ?&gt;&lt;/h1&gt;
 &lt;/body&gt;
 &lt;/html&gt;
  </pre>
