@@ -550,7 +550,7 @@ if (N &gt; 0) {
         <button onclick="copyCode(this)">Copy</button>
     </div>
  <div class="code-section">
-        <h2>1</h2>
+        <h2>8</h2>
         <pre>
        &lt;?php
 // Array of background colors for each day
@@ -603,7 +603,7 @@ if ($dayofweek == "Sunday") {
     </div>
 
 <div class="code-section">
-        <h2>1</h2>
+        <h2>9</h2>
         <pre>
 
 &lt;?php
@@ -644,7 +644,7 @@ for ($i = 3; $i &lt;= $n; $i++) {
         <button onclick="copyCode(this)">Copy</button>
     </div>
 <div class="code-section">
-        <h2>1</h2>
+        <h2>10</h2>
         <pre>
 &lt;?php
 $arr = array(1, 2, 2, 3, 4, 4, 5, 6, 6);
@@ -658,6 +658,76 @@ echo "&lt;br&gt;&lt;br&gt;List after removing duplicates:&lt;br&gt;";
 print_r($result);
 ?&gt;
  </pre>
+        <button onclick="copyCode(this)">Copy</button>
+    </div>
+<div class="code-section">
+        <h2>11</h2>
+        <pre>
+          &lt;?php
+$rows=5; // total rows
+for($i=$rows;$i&gt;=1;$i--){
+    for($s=0;$s&lt;$rows-$i;$s++){
+        echo "&amp;nbsp;"; // single space
+    }
+    for($j=1;$j&lt;=$i;$j++){
+        echo "* ";
+    }
+    echo "&lt;br&gt;"; // new line
+}
+?&gt;
+ </pre>
+        <button onclick="copyCode(this)">Copy</button>
+    </div>
+<div class="code-section">
+        <h2>12</h2>
+        <pre>
+          &lt;?php
+$students=[
+    ["id" =&gt;101,"name" =&gt;"Ravi","course" =&gt;"BCA"],
+    ["id" =&gt;102,"name" =&gt;"sneha","course" =&gt;"BSC"],
+    ["id" =&gt;103,"name" =&gt;"Arjun","course" =&gt;"BCA"],
+    ["id" =&gt;104,"name" =&gt;"Meera","course" =&gt;"MCA"],
+];
+function searchData($students,$key,$value){
+    foreach($students as $student){
+        if($student[$key]==$value){
+            return $student;
+        }
+    }
+    return null;
+}
+$result1=searchData($students,"id",103);
+$result2=searchData($students,"name","Meera");
+$result3=searchData($students,"course","BCA");
+echo "search by ID(103):";
+print_r($result1);
+echo "&lt;br&gt;&lt;br&gt;";
+echo "search by Name(Meera):";
+print_r($result2);
+echo "&lt;br&gt;&lt;br&gt;";
+echo "search by Course(BCA):";
+print_r($result3);
+?&gt;
+ </pre>
+        <button onclick="copyCode(this)">Copy</button>
+    </div>
+
+<div class="code-section">
+        <h2>13</h2>
+        <pre>
+          &lt;?php
+function generateCaptcha($length=6){
+    $characters='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    $captcha=' ';
+    for($i=0;$i&lt;$length;$i++){
+        $index=rand(0,strlen($characters)-1);
+        $captcha.=$characters[$index];
+    }
+    return $captcha;
+}
+echo "Generated CAPTCHA:".generateCaptcha(6);
+?&gt;
+</pre>
         <button onclick="copyCode(this)">Copy</button>
     </div>
 <script>
