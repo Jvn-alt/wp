@@ -735,6 +735,99 @@ echo "Generated CAPTCHA:".generateCaptcha(6);
 </pre>
         <button onclick="copyCode(this)">Copy</button>
     </div>
+<div class="code-section">
+        <h2>14</h2>
+        <pre>
+          &lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Form Validation in PHP&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h2&gt;PHP Form Validation&lt;/h2&gt;
+    &lt;form method="post" action=""&gt;
+        Name: &lt;input type="text" name="name"&gt;&lt;br&gt;&lt;br&gt;
+        Email: &lt;input type="text" name="email"&gt;&lt;br&gt;&lt;br&gt;
+        Age: &lt;input type="text" name="age"&gt;&lt;br&gt;&lt;br&gt;
+        &lt;input type="submit" name="submit" value="Validate"&gt;
+    &lt;/form&gt;
+
+    &lt;hr&gt;
+
+    &lt;?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $name = trim($_POST['name']);
+        $email = trim($_POST['email']);
+        $age = trim($_POST['age']);
+        $error = "";
+
+        if (empty($name) || empty($email) || empty($age)) {
+            $error .= "&lt;p style='color:red;'&gt;All fields are required.&lt;/p&gt;";
+        }
+
+        if (!empty($email) && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $error .= "&lt;p style='color:red;'&gt;Invalid email format.&lt;/p&gt;";
+        }
+
+        if (!empty($age) && !is_numeric($age)) {
+            $error .= "&lt;p style='color:red;'&gt;Age must be a number.&lt;/p&gt;";
+        }
+
+        if ($error == "") {
+            echo "&lt;p style='color:green;'&gt;All inputs are valid.&lt;/p&gt;";
+            echo "&lt;h3&gt;Entered Details:&lt;/h3&gt;";
+            echo "Name: $name&lt;br&gt;";
+            echo "Email: $email&lt;br&gt;";
+            echo "Age: $age&lt;br&gt;";
+        } else {
+            echo $error;
+        }
+    }
+    ?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+        <button onclick="copyCode(this)">Copy</button>
+    </div>
+<div class="code-section">
+        <h2>15</h2>
+        <pre>
+          &lt;html&gt;
+    &lt;head&gt;&lt;title&gt;Read &amp; Write&lt;/title&gt;&lt;/head&gt;
+    &lt;body&gt;
+        &lt;form action="" method="post"&gt;
+            &lt;label&gt;Enter Text To save in File&lt;/label&gt;
+            &lt;textarea name="content" rows="5" cols="40"&gt;&lt;/textarea&gt;
+            &lt;input type="submit" name="write" value="WRITE"&gt;
+            &lt;input type="submit" name="read" value="READ"&gt;
+        &lt;/form&gt;
+        &lt;?php 
+        $fn="myfile.txt";
+        if(isset($_POST["write"])){
+            $d=trim($_POST["content"]);
+            if(!empty($d)){
+                $f=fopen($fn,"a") or die("Unable to Open the File");
+                fwrite($f,$d."\n");
+                fclose($f);
+                echo"&lt;p style='color: green;'&gt;Data Successfully Written to $fn&lt;p&gt;";
+            } else {
+                echo "&lt;p style='color: red;'&gt;Please Enter Some Text To Write&lt;p&gt;";
+            }
+        }
+        if(isset($_POST["read"])){
+            if(file_exists($fn) &amp;&amp; filesize($fn) &gt; 0){
+                $content=file_get_contents($fn);
+                echo"&lt;h3&gt;Content of $fn&lt;/h3&gt;&lt;pre&gt;$content&lt;/pre&gt;";
+            } else {
+                echo "&lt;p style='color: red;'&gt;File Does Not Exist Or No Data&lt;p&gt;";
+            }
+        }
+        ?&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+        <button onclick="copyCode(this)">Copy</button>
+    </div>
 <script>
     function copyCode(button) {
         const codeBlock = button.previousElementSibling.innerText;
