@@ -828,6 +828,65 @@ echo "Generated CAPTCHA:".generateCaptcha(6);
 </pre>
         <button onclick="copyCode(this)">Copy</button>
     </div>
+<div class="code-section">
+        <h2>16</h2>
+        <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Exception Handling&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h2&gt;PHP Exception Handling&lt;/h2&gt;
+    &lt;form method="post"&gt;
+        &lt;label&gt;Enter First Number:&lt;/label&gt;
+        &lt;input type="number" name="num1" required&gt;&lt;br&gt;&lt;br&gt;
+
+        &lt;label&gt;Enter Second Number:&lt;/label&gt;
+        &lt;input type="number" name="num2" required&gt;&lt;br&gt;&lt;br&gt;
+
+        &lt;label&gt;Enter Date (dd-mm-yyyy):&lt;/label&gt;
+        &lt;input type="text" name="date" required&gt;&lt;br&gt;&lt;br&gt;
+
+        &lt;input type="submit" value="Check"&gt;
+    &lt;/form&gt;
+
+    &lt;?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $num1 = $_POST["num1"];
+        $num2 = $_POST["num2"];
+        $date = $_POST["date"];
+
+        try {
+            // Divide by zero check
+            if ($num2 == 0) {
+                throw new Exception("Cannot divide by zero!");
+            } else {
+                $result = $num1 / $num2;
+                echo "&lt;p&gt;Division Result: $result&lt;/p&gt;";
+            }
+
+            // Date format check (dd-mm-yyyy)
+            if (!preg_match("/^\d{2}-\d{2}-\d{4}$/", $date)) {
+                throw new Exception("Invalid date format! Please use dd-mm-yyyy.");
+            } else {
+                echo "&lt;p&gt;Valid Date Format: $date&lt;/p&gt;";
+            }
+        }
+        catch (Exception $e) {
+            echo "&lt;p style='color:red;'&gt;" . $e-&gt;getMessage() . "&lt;/p&gt;";
+        }
+        finally {
+            echo "&lt;p&gt;Program execution completed.&lt;/p&gt;";
+        }
+    }
+    ?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+</pre>
+        <button onclick="copyCode(this)">Copy</button>
+    </div>
 <script>
     function copyCode(button) {
         const codeBlock = button.previousElementSibling.innerText;
