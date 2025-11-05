@@ -890,7 +890,7 @@ echo "Generated CAPTCHA:".generateCaptcha(6);
 <div class="code-section">
         <h2>17</h2>
         <pre>
-          &lt;!doctype html&gt;
+&lt;!doctype html&gt;
 &lt;html lang="en"&gt;
 &lt;head&gt;
   &lt;meta charset="utf-8" /&gt;
@@ -911,7 +911,6 @@ echo "Generated CAPTCHA:".generateCaptcha(6);
 
     &lt;!-- Page-specific content starts here --&gt;
     &lt;?php
-      // Example: You can include your dynamic content here
       echo "&lt;h2&gt;Welcome to St. Francis College&lt;/h2&gt;";
       echo "&lt;p&gt;Providing quality education for a brighter future.&lt;/p&gt;";
     ?&gt;
@@ -923,9 +922,11 @@ echo "Generated CAPTCHA:".generateCaptcha(6);
     &lt;p&gt;&amp;copy; &lt;?php echo date("Y"); ?&gt; St. Francis College. All rights reserved.&lt;/p&gt;
   &lt;/footer&gt;
 &lt;/body&gt;
-&lt;/html&gt;
-
-INDEX
+&lt;/html&gt:
+            
+--------------------------------------------------------------------------------------------------------- 
+            
+INDEX : index.html
 &lt;?php include("header.php"); ?&gt;
 
 &lt;div class="home-background"&gt;
@@ -936,8 +937,10 @@ INDEX
 &lt;/div&gt;
 
 &lt;?php include("footer.php"); ?&gt;
-
-ABOUT
+            
+--------------------------------------------------------------------------------------------------------- 
+            
+ABOUT : about.html
 &lt;?php include("header.php"); ?&gt;
 
 &lt;h2&gt;About us&lt;/h2&gt;
@@ -945,7 +948,9 @@ ABOUT
 
 &lt;?php include("footer.php"); ?&gt;
 
-COURSES
+---------------------------------------------------------------------------------------------------------
+            
+COURSES : courses.html
 &lt;?php include("header.php"); ?&gt;
 
 &lt;h2&gt;Our Courses&lt;/h2&gt;
@@ -979,7 +984,9 @@ COURSES
 
 &lt;?php include("footer.php"); ?&gt;
 
-CONTACT 
+---------------------------------------------------------------------------------------------------------
+
+CONTACT : contact.html
 &lt;?php include("header.php"); ?&gt;
 
 &lt;h2&gt;Contact us&lt;/h2&gt;
@@ -994,7 +1001,7 @@ CONTACT
 &lt;?php include("footer.php"); ?&gt;
 
 STYLE
-/* reset */
+
 * {
   margin: 0;
   padding: 0;
@@ -1007,7 +1014,7 @@ html, body {
   color: #333;
 }
 
-/* Navbar */
+
 .navbar {
   background-color: #003366;
   padding: 14px;
@@ -1025,7 +1032,7 @@ html, body {
   background-color: #005963;
 }
 
-/* Footer */
+
 .footer {
   background-color: #003366;
   color: white;
@@ -1033,7 +1040,7 @@ html, body {
   text-align: center;
 }
 
-/* Content wrapper */
+
 .content {
   display: flex;
   justify-content: center;
@@ -1044,7 +1051,7 @@ html, body {
   padding: 20px;
 }
 
-/* Home (hero) */
+
 .home-background {
   width: 100%;
   background-image: url('college.jpg');
@@ -1069,7 +1076,7 @@ html, body {
   margin-bottom: 8px;
 }
 
-/* Courses table */
+
 .courses-table {
   width: 90%;
   max-width: 900px;
@@ -1084,7 +1091,7 @@ html, body {
   border: 1px solid #ddd;
 }
 
-/* Contact box */
+
 .contact-box {
   width: 90%;
   max-width: 600px;
@@ -1107,14 +1114,9 @@ h2 {
         <h2>18</h2>
         <pre>
   &lt;?php
-// Step 1: Set a cookie named "user" with a value "Kusuma"
 $cookie_name = "user";
 $cookie_value = "Kusuma";
-
-// The cookie will expire in 1 hour (3600 seconds)
 setcookie($cookie_name, $cookie_value, time() + 3600, "/");
-
-// Step 2: Check if the cookie is already set
 if(isset($_COOKIE[$cookie_name])) {
     echo "Welcome back, " . $_COOKIE[$cookie_name] . "!";
 } else {
@@ -1136,3 +1138,4 @@ if(isset($_COOKIE[$cookie_name])) {
 </body>
 
 </html>
+
