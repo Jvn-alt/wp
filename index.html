@@ -887,6 +887,243 @@ echo "Generated CAPTCHA:".generateCaptcha(6);
 </pre>
         <button onclick="copyCode(this)">Copy</button>
     </div>
+<div class="code-section">
+        <h2>17</h2>
+        <pre>
+          &lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;meta name="viewport" content="width=device-width,initial-scale=1" /&gt;
+  &lt;title&gt;St. Francis College&lt;/title&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;div class="navbar"&gt;
+    &lt;a href="index.php"&gt;Home&lt;/a&gt;
+    &lt;a href="about.php"&gt;About us&lt;/a&gt;
+    &lt;a href="courses.php"&gt;Courses&lt;/a&gt;
+    &lt;a href="contact.php"&gt;Contact&lt;/a&gt;
+  &lt;/div&gt;
+
+  &lt;div class="content"&gt;
+
+    &lt;!-- Page-specific content starts here --&gt;
+    &lt;?php
+      // Example: You can include your dynamic content here
+      echo "&lt;h2&gt;Welcome to St. Francis College&lt;/h2&gt;";
+      echo "&lt;p&gt;Providing quality education for a brighter future.&lt;/p&gt;";
+    ?&gt;
+    &lt;!-- Page-specific content ends here --&gt;
+
+  &lt;/div&gt; &lt;!-- closing content --&gt;
+
+  &lt;footer class="footer"&gt;
+    &lt;p&gt;&amp;copy; &lt;?php echo date("Y"); ?&gt; St. Francis College. All rights reserved.&lt;/p&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+INDEX
+&lt;?php include("header.php"); ?&gt;
+
+&lt;div class="home-background"&gt;
+  &lt;div class="home-text"&gt;
+    &lt;h2&gt;Welcome to St. Francis College&lt;/h2&gt;
+    &lt;p&gt;Providing quality education for a brighter future.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;?php include("footer.php"); ?&gt;
+
+ABOUT
+&lt;?php include("header.php"); ?&gt;
+
+&lt;h2&gt;About us&lt;/h2&gt;
+&lt;p&gt;St. Francis College is one of the leading institutions offering undergraduate and postgraduate programs in Science, Commerce, and Arts. We focus on providing high-quality education, research opportunities, and overall personality development of students.&lt;/p&gt;
+
+&lt;?php include("footer.php"); ?&gt;
+
+COURSES
+&lt;?php include("header.php"); ?&gt;
+
+&lt;h2&gt;Our Courses&lt;/h2&gt;
+
+&lt;table class="courses-table" border="1" cellspacing="0" cellpadding="8" align="center"&gt;
+  &lt;thead style="background-color:#c8e6c9;"&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Course Name&lt;/th&gt;
+      &lt;th&gt;Duration&lt;/th&gt;
+      &lt;th&gt;Department&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;BCA&lt;/td&gt;
+      &lt;td&gt;3 Years&lt;/td&gt;
+      &lt;td&gt;Computer Applications&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;BCom&lt;/td&gt;
+      &lt;td&gt;3 Years&lt;/td&gt;
+      &lt;td&gt;Commerce&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;BBA&lt;/td&gt;
+      &lt;td&gt;3 Years&lt;/td&gt;
+      &lt;td&gt;Business Administration&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;?php include("footer.php"); ?&gt;
+
+CONTACT 
+&lt;?php include("header.php"); ?&gt;
+
+&lt;h2&gt;Contact us&lt;/h2&gt;
+
+&lt;div class="contact-box"&gt;
+  &lt;p&gt;&lt;strong&gt;St. Francis College&lt;/strong&gt;&lt;/p&gt;
+  &lt;p&gt;Email: info@stfranciscollege.com&lt;/p&gt;
+  &lt;p&gt;Phone: +91 98765 43210&lt;/p&gt;
+  &lt;p&gt;Address: Koramangala, Bangalore - 560034&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;?php include("footer.php"); ?&gt;
+
+STYLE
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #003366;
+  padding: 14px;
+  text-align: center;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 12px 18px;
+  display: inline-block;
+}
+
+.navbar a:hover {
+  background-color: #005963;
+}
+
+/* Footer */
+.footer {
+  background-color: #003366;
+  color: white;
+  padding: 12px;
+  text-align: center;
+}
+
+/* Content wrapper */
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: calc(100vh - 13px);
+  background-color: #f2f7ff;
+  padding: 20px;
+}
+
+/* Home (hero) */
+.home-background {
+  width: 100%;
+  background-image: url('college.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: calc(100vh - 160px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-text {
+  background: rgba(0,0,0,0.45);
+  padding: 28px;
+  border-radius: 6px;
+  color: white;
+  text-align: center;
+}
+
+.home-text h2 {
+  margin-bottom: 8px;
+}
+
+/* Courses table */
+.courses-table {
+  width: 90%;
+  max-width: 900px;
+  margin-top: 18px;
+  border-collapse: collapse;
+}
+
+.courses-table th,
+.courses-table td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+/* Contact box */
+.contact-box {
+  width: 90%;
+  max-width: 600px;
+  margin-top: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  padding: 20px;
+}
+
+/* Utility */
+h2 {
+  margin: 18px 0;
+  text-align: center;
+}
+</pre>
+        <button onclick="copyCode(this)">Copy</button>
+    </div>
+<div class="code-section">
+        <h2>18</h2>
+        <pre>
+  &lt;?php
+// Step 1: Set a cookie named "user" with a value "Kusuma"
+$cookie_name = "user";
+$cookie_value = "Kusuma";
+
+// The cookie will expire in 1 hour (3600 seconds)
+setcookie($cookie_name, $cookie_value, time() + 3600, "/");
+
+// Step 2: Check if the cookie is already set
+if(isset($_COOKIE[$cookie_name])) {
+    echo "Welcome back, " . $_COOKIE[$cookie_name] . "!";
+} else {
+    echo "Welcome, new visitor! Refresh the page to see the change.";
+}
+?&gt;
+</pre>
+        <button onclick="copyCode(this)">Copy</button>
+    </div>
 <script>
     function copyCode(button) {
         const codeBlock = button.previousElementSibling.innerText;
