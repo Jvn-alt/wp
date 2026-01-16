@@ -890,6 +890,8 @@ echo "Generated CAPTCHA:".generateCaptcha(6);
 <div class="code-section">
         <h2>17</h2>
         <pre>
+---------------------------------------------------------------------------------------------------------------
+HEADER : header.php
 &lt;!doctype html&gt;
 &lt;html lang="en"&gt;
 &lt;head&gt;
@@ -915,7 +917,8 @@ echo "Generated CAPTCHA:".generateCaptcha(6);
       echo "&lt;p&gt;Providing quality education for a brighter future.&lt;/p&gt;";
     ?&gt;
     &lt;!-- Page-specific content ends here --&gt;
-
+---------------------------------------------------------------------------------------------------------
+FOOTER : footer.php
   &lt;/div&gt; &lt;!-- closing content --&gt;
 
   &lt;footer class="footer"&gt;
@@ -926,7 +929,7 @@ echo "Generated CAPTCHA:".generateCaptcha(6);
             
 --------------------------------------------------------------------------------------------------------- 
             
-INDEX : index.html
+INDEX : index.php
 &lt;?php include("header.php"); ?&gt;
 
 &lt;div class="home-background"&gt;
@@ -940,7 +943,7 @@ INDEX : index.html
             
 --------------------------------------------------------------------------------------------------------- 
             
-ABOUT : about.html
+ABOUT : about.php
 &lt;?php include("header.php"); ?&gt;
 
 &lt;h2&gt;About us&lt;/h2&gt;
@@ -950,7 +953,7 @@ ABOUT : about.html
 
 ---------------------------------------------------------------------------------------------------------
             
-COURSES : courses.html
+COURSES : courses.php
 &lt;?php include("header.php"); ?&gt;
 
 &lt;h2&gt;Our Courses&lt;/h2&gt;
@@ -986,7 +989,7 @@ COURSES : courses.html
 
 ---------------------------------------------------------------------------------------------------------
 
-CONTACT : contact.html
+CONTACT : contact.php
 &lt;?php include("header.php"); ?&gt;
 
 &lt;h2&gt;Contact us&lt;/h2&gt;
@@ -1139,5 +1142,6 @@ if(isset($_COOKIE[$cookie_name])) {
 </body>
 
 </html>
+
 
 
